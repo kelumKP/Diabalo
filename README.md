@@ -1,6 +1,6 @@
 # Diabalo
 
-####This is nextGen.™ Boook keeping solution.A multilayered project project building under repository design pattern.This project contains five(5) interdependant projects.
+####This is nextGen.™ Book keeping solution.A multilayered project project building under repository design pattern.This project contains five(5) interdependant projects.
 
 ######Main Dashboard - Booklist with Authors
 
