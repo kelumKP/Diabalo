@@ -4,7 +4,7 @@
 
 ######Main Dashboard - Booklist with Authors
 
-![Dashboard](http://i.imgur.com/pbnlJKG.png "Main Dashboard")
+![Dashboard](http://i.imgur.com/jdTkGxF.png "Main Dashboard")
 
 ######Authers Dashboard - Auther list
 
