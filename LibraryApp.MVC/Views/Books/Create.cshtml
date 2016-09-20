@@ -1,0 +1,67 @@
+﻿@model LibraryApp.Core.Entities.Book
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Create a Book</h4>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Book_Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Book_Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Book_Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Edition, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.Edition, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownList("Edition", (IEnumerable<SelectListItem>)ViewBag.listEditions, "Select the Edition", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Edition, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Auther_Id, "Auther Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*Non Strongly Type*@
+                @Html.DropDownList("Auther_Id", (IEnumerable<SelectListItem>)ViewBag.listAuthers, "Select the auther name", htmlAttributes: new { @class = "form-control" })
+                @*Strongly Type*@
+                @*@Html.DropDownListFor(m => m.Auther_Id, Model.Authers, "---Select---", htmlAttributes: new { @class = "form-control" })*@
+                @Html.ValidationMessageFor(model => model.Auther_Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<div>
+    <p>
+        <button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("BookswithAuthers", "BookWithAuther")';"><span class="glyphicon glyphicon-list-alt"></span> Book List</button>
+    </p>
+</div>

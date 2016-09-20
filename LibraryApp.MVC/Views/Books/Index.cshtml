@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LibraryApp.Core.Entities.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Auther.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edition)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auther.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edition)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Book_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Book_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Book_Id })
+        </td>
+    </tr>
+}
+
+</table>

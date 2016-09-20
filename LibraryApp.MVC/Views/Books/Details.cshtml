@@ -1,0 +1,51 @@
+﻿@model LibraryApp.Core.Entities.Book
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Auther.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Auther.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edition)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Book_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

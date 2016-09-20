@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Books with Authers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Books with Authers</h4>
+
+<p>
+    <button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("Create","Books")';"><span class="glyphicon glyphicon-plus"></span> Create New Book</button>
+   <button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("Index", "Authers")';"><span class="glyphicon glyphicon-user"></span> Authers List</button>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Book ID
+        </th>
+        <th>
+            Book Title
+        </th>
+        <th>
+            Auther Name
+        </th>
+        <th>
+            Edition
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.listBookswithAuthers)
+    {
+        <tr>
+            <td>
+                @item.BookWithAuther_Id
+            </td>
+            <td>
+                @item.BookWithAuther_Title
+
+            </td>
+            <td>
+                @item.BookWithAuther_AutherName
+            </td>
+            <td>
+                @item.Edition
+            </td>
+            <td>
+                @item.Price
+            </td>
+
+            <td>
+                <a class="btn btn-danger btn-xs" onclick="return confirm('Are you Sure ?')" href="@Url.Action("Delete","Books" , new { id = item.BookWithAuther_Id })"><span class="glyphicon glyphicon-trash"></span> Delete Book</a>
+                @*<button type="button" class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete","Books" , new { id = item.BookWithAuther_Id})',return confirm('Are you Sure ?');"><span class="glyphicon glyphicon-trash"></span> Delete Book</button>*@
+                <a class="btn btn-warning btn-xs" href="@Url.Action("Edit","Books" , new { id = item.BookWithAuther_Id })"><span class="glyphicon glyphicon-scissors"></span> Edit Book</a>
+                @*<button type="button" class="btn btn-warning btn-xs" onclick="location.href='@Url.Action("Edit","Books" , new { id = item.BookWithAuther_Id })';"><span class="glyphicon glyphicon-scissors"></span> Edit Book</button>*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+
