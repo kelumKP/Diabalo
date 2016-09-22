@@ -1,6 +1,12 @@
 # Diabalo
 
-####This is nextGen.™ Book keeping solution.A multilayered project project building under repository design pattern.This project contains five(5) interdependant projects.
+####This is nextGen.™ Book keeping solution.A multilayered project building under repository design pattern.This project contains five(5) interdependant projects.
+
+#####LibraryApp.Core           - Entities and Interfaces
+#####LibraryApp.Infrastructure - Business Logics and Database Configurations
+#####LibraryApp.UnitTest       - Unit of Work Test
+#####LibraryApp.WebAPI         - Web Service 
+#####LibraryApp.MVC            - Frond End
 
 ######Main Dashboard - Booklist with Authors
 
