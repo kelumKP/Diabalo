@@ -10,6 +10,10 @@
 #####LibraryApp.MVC            - Frond End
 ------
 
+######Architechure of the Project
+
+![Dashboard](http://i.imgur.com/GAL9oZK.png "Main Architechure")
+
 ######Main Dashboard - Booklist with Authors
 
 ![Dashboard](http://i.imgur.com/jdTkGxF.png "Main Dashboard")
