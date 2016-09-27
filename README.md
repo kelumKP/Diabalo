@@ -28,7 +28,7 @@
 
 ######Edit a Book
 
-![Dashboard](http://i.imgur.com/CjF1ARQ.png "Edit a Book")
+![Dashboard](http://i.imgur.com/undefined.png "Edit a Book")
 
 ######Create an Author
 
