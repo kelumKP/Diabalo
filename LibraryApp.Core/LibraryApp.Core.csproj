@@ -81,11 +81,11 @@
     <Compile Include="Entities\Author.cs" />
     <Compile Include="Entities\Basic.cs" />
     <Compile Include="Entities\Book.cs" />
-    <Compile Include="Entities\BookWithAuther.cs" />
-    <Compile Include="Interfaces\IAutherRepository.cs" />
+    <Compile Include="Entities\BookWithAuthor.cs" />
+    <Compile Include="Interfaces\IAuthorRepository.cs" />
     <Compile Include="Interfaces\IBasic.cs" />
     <Compile Include="Interfaces\IBookRepository.cs" />
-    <Compile Include="Interfaces\IBooksWithAuthersRepository.cs" />
+    <Compile Include="Interfaces\IBooksWithAuthorsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
