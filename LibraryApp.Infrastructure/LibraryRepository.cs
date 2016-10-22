@@ -8,49 +8,49 @@ using LibraryApp.Core.Interfaces;
 
 namespace LibraryApp.Infrastructure
 {
-    public class LibraryRepository : IBookRepository, IAutherRepository, IBooksWithAuthersRepository,IBasic
+    public class LibraryRepository : IBookRepository, IAuthorRepository, IBooksWithAuthorsRepository,IBasic
     {
         LibraryContext context = new LibraryContext();
 
-        #region //-----------Books with Authers
-        public IEnumerable<BookWithAuther> GetBooksWithAuthers()
+        #region //-----------Books with Authors
+        public IEnumerable<BookWithAuthor> GetBooksWithAuthors()
         {
-            var bookswithauthers = (
+            var bookswithauthors = (
                                         from book in context.Books
-                                        join auther in context.Authers
-                                        on book.Auther_Id equals auther.Auth_Id
-                                        select new BookWithAuther
+                                        join author in context.Authors
+                                        on book.Author_Id equals author.Auth_Id
+                                        select new BookWithAuthor
                                         {
 
-                                            BookWithAuther_Id = book.Book_Id,
-                                            BookWithAuther_Title = book.Book_Title,
-                                            BookWithAuther_AutherName = auther.First_Name + " " + auther.Last_Name,
+                                            BookWithAuthor_Id = book.Book_Id,
+                                            BookWithAuthor_Title = book.Book_Title,
+                                            BookWithAuthor_AuthorName = author.First_Name + " " + author.Last_Name,
                                             Edition = book.Edition,
                                             Price = book.Price
 
                                         }).ToList();
 
-            return bookswithauthers;
+            return bookswithauthors;
         }
 
-        public BookWithAuther FindBooksWithAuthersById(int BookWithAuther_Id)
+        public BookWithAuthor FindBooksWithAuthorsById(int BookWithAuthor_Id)
         {
-            var bookwithauther = (
+            var bookwithauthor = (
                                    from book in context.Books
-                                   join auther in context.Authers
-                                   on book.Auther_Id equals auther.Auth_Id
-                                   where book.Book_Id == BookWithAuther_Id
-                                   select new BookWithAuther
+                                   join author in context.Authors
+                                   on book.Author_Id equals author.Auth_Id
+                                   where book.Book_Id == BookWithAuthor_Id
+                                   select new BookWithAuthor
                                    {
-                                       BookWithAuther_Id = book.Book_Id,
-                                       BookWithAuther_Title = book.Book_Title,
-                                       BookWithAuther_AutherName = auther.First_Name + " " + auther.Last_Name,
+                                       BookWithAuthor_Id = book.Book_Id,
+                                       BookWithAuthor_Title = book.Book_Title,
+                                       BookWithAuthor_AuthorName = author.First_Name + " " + author.Last_Name,
                                        Edition = book.Edition,
                                        Price = book.Price
 
                                    }).FirstOrDefault();
 
-            return bookwithauther;
+            return bookwithauthor;
 
         }
 
@@ -113,34 +113,34 @@ namespace LibraryApp.Infrastructure
 
         #endregion
 
-        #region //-----------Authers
+        #region //-----------Authors
 
-        public void AddAuther(Auther auther)
+        public void AddAuthor(Author author)
         {
-            context.Authers.Add(auther);
+            context.Authors.Add(author);
             context.SaveChanges();
         }
 
-        public void EditAuther(Auther auther)
+        public void EditAuthor(Author author)
         {
-            context.Entry(auther).State = System.Data.Entity.EntityState.Modified;
+            context.Entry(author).State = System.Data.Entity.EntityState.Modified;
             context.SaveChanges();
         }
 
-        public Auther FindAutherById(int Auther_Id)
+        public Author FindAuthorById(int Author_Id)
         {
-            var c = (from r in context.Authers where r.Auth_Id == Auther_Id select r).FirstOrDefault();
+            var c = (from r in context.Authors where r.Auth_Id == Author_Id select r).FirstOrDefault();
             return c;
         }
 
-        public IEnumerable<Auther> GetAuthers()
+        public IEnumerable<Author> GetAuthors()
         {
-            return context.Authers;
+            return context.Authors;
         }
-        public void RemoveAuther(int Auther_Id)
+        public void RemoveAuthor(int Author_Id)
         {
-            Auther auther = context.Authers.Find(Auther_Id);
-            context.Authers.Remove(auther);
+            Author author = context.Authors.Find(Author_Id);
+            context.Authors.Remove(author);
             context.SaveChanges();
         }
 
@@ -148,19 +148,19 @@ namespace LibraryApp.Infrastructure
 
         #region //-----------DropDowns
 
-        public IEnumerable<Basic> GetAuthersIdName()
+        public IEnumerable<Basic> GetAuthorsIdName()
         {
-            var autheridname = (
-                                        from auther in context.Authers
+            var authoridname = (
+                                        from author in context.Authors
                                         select new Basic
                                         {
 
-                                            ID = auther.Auth_Id,
-                                            NAME = auther.First_Name + " " + auther.Last_Name
+                                            ID = author.Auth_Id,
+                                            NAME = author.First_Name + " " + author.Last_Name
 
                                         }).ToList();
 
-            return autheridname;
+            return authoridname;
         }
 
         public IEnumerable<Basic> GetEditionIdName()

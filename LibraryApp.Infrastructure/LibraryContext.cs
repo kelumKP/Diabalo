@@ -19,7 +19,7 @@ namespace LibraryApp.Infrastructure
         //{
         //    modelBuilder.Entity<Book>().Property(x => x.Price).HasPrecision(16, 3);
         //}
-        public DbSet<Auther> Authers { get; set; }
+        public DbSet<Author> Authors { get; set; }
 
     }
 }

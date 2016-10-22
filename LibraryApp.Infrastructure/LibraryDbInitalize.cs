@@ -12,39 +12,39 @@ namespace LibraryApp.Infrastructure
     {
         protected override void Seed(LibraryContext context)
         {
-            //Auther
-            context.Authers.Add
+            //Author
+            context.Authors.Add
             (
-                  new Auther
+                  new Author
                   {
                       Auth_Id = 1,
-                      First_Name = "Auther FirstName 001",
-                      Last_Name = "Auther LastName 001",
-                      Biography = "Auther 1st Bio",
+                      First_Name = "Author FirstName 001",
+                      Last_Name = "Author LastName 001",
+                      Biography = "Author 1st Bio",
                       IsEmployed = "Y"
                   }
               );
 
-            context.Authers.Add
+            context.Authors.Add
             (
-                 new Auther
+                 new Author
                  {
                      Auth_Id = 2,
-                     First_Name = "Auther FirstName 002",
-                     Last_Name = "Auther LastName 002",
-                     Biography = "Auther 2nd Bio",
+                     First_Name = "Author FirstName 002",
+                     Last_Name = "Author LastName 002",
+                     Biography = "Author 2nd Bio",
                      IsEmployed = "Y"
                  }
             );
 
-            context.Authers.Add
+            context.Authors.Add
             (
-                 new Auther
+                 new Author
                  {
                      Auth_Id = 3,
-                     First_Name = "Auther FirstName 003",
-                     Last_Name = "Auther LastName 003",
-                     Biography = "Auther 3rd Bio",
+                     First_Name = "Author FirstName 003",
+                     Last_Name = "Author LastName 003",
+                     Biography = "Author 3rd Bio",
                      IsEmployed = "N"
                  }
             );
@@ -59,7 +59,7 @@ namespace LibraryApp.Infrastructure
                       Book_Title = "Book Title 001",
                       Edition = "1st Edition",
                       Price = 40.0M,
-                      Auther_Id = 1
+                      Author_Id = 1
                   }
               );
 
@@ -71,7 +71,7 @@ namespace LibraryApp.Infrastructure
                      Book_Title = "Book Title 002",
                      Edition = "3rd Edition",
                      Price = 80.00M,
-                     Auther_Id = 2
+                     Author_Id = 2
                  }
             );
 
@@ -83,7 +83,7 @@ namespace LibraryApp.Infrastructure
                      Book_Title = "Book Title 003",
                      Edition = "4th Edition",
                      Price = 120.00M,
-                     Auther_Id = 3
+                     Author_Id = 3
                  }
             );
 
