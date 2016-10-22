@@ -23,31 +23,31 @@ namespace LibraryApp.UnitTest
             Repo = new LibraryRepository();
         }
 
-        //------------------Auther  
+        //------------------Author  
         [TestMethod]
-        public void IsRepositoryInitalizeWithValidNumberOfData_Auther()
+        public void IsRepositoryInitalizeWithValidNumberOfData_Author()
         {
-            var result = Repo.GetAuthers();
+            var result = Repo.GetAuthors();
             Assert.IsNotNull(result);
             var numberOfRecords = result.ToList().Count;
             Assert.AreEqual(3, numberOfRecords);
         }
 
         [TestMethod]
-        public void IsRepositoryAddsAuther()
+        public void IsRepositoryAddsAuthor()
         {
-            Auther productToInsert = new Auther
+            Author productToInsert = new Author
             {
                 Auth_Id = 4,
-                First_Name = "Auther FirstName 004",
-                Last_Name = "Auther LastName 004",
-                Biography = "Auther 4th Bio"
+                First_Name = "Author FirstName 004",
+                Last_Name = "Author LastName 004",
+                Biography = "Author 4th Bio"
 
             };
-            Repo.AddAuther(productToInsert);
+            Repo.AddAuthor(productToInsert);
             // If Product inserts successfully, 
             //number of records will increase to 4 
-            var result = Repo.GetAuthers();
+            var result = Repo.GetAuthors();
             var numberOfRecords = result.ToList().Count;
             Assert.AreEqual(4, numberOfRecords);
         }
@@ -56,7 +56,7 @@ namespace LibraryApp.UnitTest
         [TestMethod]
         public void IsRepositoryInitalizeWithValidNumberOfData_Book()
         {
-            var result = Repo.GetBooksWithAuthers();
+            var result = Repo.GetBooksWithAuthors();
             Assert.IsNotNull(result);
             var numberOfRecords = result.ToList().Count;
             Assert.AreEqual(3, numberOfRecords);
@@ -71,7 +71,7 @@ namespace LibraryApp.UnitTest
                 Book_Title = "Book Title 004",
                 Price = 9.00M,
                 Edition = "4th Edition",
-                Auther_Id = 1
+                Author_Id = 1
                 
 
             };
@@ -83,12 +83,12 @@ namespace LibraryApp.UnitTest
             Assert.AreEqual(4, numberOfRecords);
         }
 
-        //------------------Books with Auther 
+        //------------------Books with Author 
 
         [TestMethod]
-        public void IsRepositoryInitalizeWithValidNumberOfData_BooksWithAuther()
+        public void IsRepositoryInitalizeWithValidNumberOfData_BooksWithAuthor()
         {
-            var result = Repo.GetBooksWithAuthers();
+            var result = Repo.GetBooksWithAuthors();
             Assert.IsNotNull(result);
             var numberOfRecords = result.ToList().Count;
             Assert.AreEqual(4, numberOfRecords);
@@ -96,9 +96,9 @@ namespace LibraryApp.UnitTest
 
         //------------------DropDown
         [TestMethod]
-        public void IsRepositoryInitalizeWithValidNumberOfData_AutherDropDown()
+        public void IsRepositoryInitalizeWithValidNumberOfData_AuthorDropDown()
         {
-            var result = Repo.GetAuthersIdName();
+            var result = Repo.GetAuthorsIdName();
             Assert.IsNotNull(result);
             var numberOfRecords = result.ToList().Count;
             Assert.AreEqual(4, numberOfRecords);
