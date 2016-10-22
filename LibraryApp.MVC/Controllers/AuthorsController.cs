@@ -12,17 +12,17 @@ using LibraryApp.MVC.Models;
 
 namespace LibraryApp.MVC.Controllers
 {
-    public class AuthersController : Controller
+    public class AuthorsController : Controller
     {
-        // GET: Authers
+        // GET: Authors
         public ActionResult Index()
         {
             LibraryClient lc = new LibraryClient();
-            ViewBag.listAuthers = lc.GetAllAuthers();             
+            ViewBag.listAuthors = lc.GetAllAuthors();             
             return View();
         }
 
-        // GET: Authers/Create
+        // GET: Authors/Create
         public ActionResult Create()
         {
             LibraryClient lc = new LibraryClient();
@@ -30,42 +30,42 @@ namespace LibraryApp.MVC.Controllers
             return View("Create");
         }
 
-        // POST: Authers/Create
+        // POST: Authors/Create
         [HttpPost]
-        public ActionResult Create(Auther auther)
+        public ActionResult Create(Author author)
         {
             LibraryClient lc = new LibraryClient();
-            lc.CreateAuther(auther);
-            return RedirectToAction("Index", "Authers");
+            lc.CreateAuthor(author);
+            return RedirectToAction("Index", "Authors");
         }
 
-        // GET: Authers/Delete
+        // GET: Authors/Delete
         public ActionResult Delete(int id)
         {
             LibraryClient lc = new LibraryClient();
             lc.DeleteAuthr(id);
-            return RedirectToAction("Index", "Authers");
+            return RedirectToAction("Index", "Authors");
         }
 
-        // GET: Authers/Edit
+        // GET: Authors/Edit
         [HttpGet]
         public ActionResult Edit(int id)
         {
             LibraryClient lc = new LibraryClient();
-            Auther auther = new Auther();
+            Author author = new Author();
             ViewBag.listEmploymentStatus = lc.GetEmplyeeStatusIdNameMVCModel().Select(x => new SelectListItem { Value = x.NAME, Text = x.NAME });
-            auther = lc.GetAuther(id);
+            author = lc.GetAuthor(id);
 
-            return View("Edit", auther);
+            return View("Edit", author);
         }
 
-        // POST: Authers/Edit
+        // POST: Authors/Edit
         [HttpPost]
-        public ActionResult Edit(Auther auther)
+        public ActionResult Edit(Author author)
         {
             LibraryClient pc = new LibraryClient();
-            pc.EditAuther(auther);
-            return RedirectToAction("Index", "Authers");
+            pc.EditAuthor(author);
+            return RedirectToAction("Index", "Authors");
         }
     }
 }

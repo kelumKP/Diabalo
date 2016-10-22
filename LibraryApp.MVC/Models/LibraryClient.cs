@@ -13,21 +13,21 @@ namespace LibraryApp.MVC.Models
     public class LibraryClient
     {
         
-        private string BOOKWITHAUTHER_URL = "http://localhost:13793/api/BooksWithAuthers";
-        private string AUTHER_URL = "http://localhost:13793/api/Authers";
+        private string BOOKWITHAUTHER_URL = "http://localhost:13793/api/BooksWithAuthors";
+        private string AUTHER_URL = "http://localhost:13793/api/Authors";
         private string BOOK_URL = "http://localhost:13793/api/Books";
 
-        #region //Books with Authers
-        public IEnumerable<BookWithAuther> GetAllBookWithAuthers()
+        #region //Books with Authors
+        public IEnumerable<BookWithAuthor> GetAllBookWithAuthors()
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(BOOKWITHAUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("BooksWithAuthers").Result;
+                HttpResponseMessage response = client.GetAsync("BooksWithAuthors").Result;
                 if (response.IsSuccessStatusCode)
-                    return response.Content.ReadAsAsync<IEnumerable<BookWithAuther>>().Result;
+                    return response.Content.ReadAsAsync<IEnumerable<BookWithAuthor>>().Result;
                 return null;
             }
             catch
@@ -37,16 +37,16 @@ namespace LibraryApp.MVC.Models
 
         }
 
-        public BookWithAuther GetBookwithAuther(int id)
+        public BookWithAuthor GetBookwithAuthor(int id)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(BOOKWITHAUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("BooksWithAuthers/" + id).Result;
+                HttpResponseMessage response = client.GetAsync("BooksWithAuthors/" + id).Result;
                 if (response.IsSuccessStatusCode)
-                    return response.Content.ReadAsAsync<BookWithAuther>().Result;
+                    return response.Content.ReadAsAsync<BookWithAuthor>().Result;
                 return null;
             }
             catch
@@ -135,18 +135,18 @@ namespace LibraryApp.MVC.Models
 
         #endregion
 
-        #region // Auther
+        #region // Author
 
-        public IEnumerable<Auther> GetAllAuthers()
+        public IEnumerable<Author> GetAllAuthors()
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(AUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("Authers").Result;
+                HttpResponseMessage response = client.GetAsync("Authors").Result;
                 if (response.IsSuccessStatusCode)
-                    return response.Content.ReadAsAsync<IEnumerable<Auther>>().Result;
+                    return response.Content.ReadAsAsync<IEnumerable<Author>>().Result;
                 return null;
             }
             catch
@@ -156,16 +156,16 @@ namespace LibraryApp.MVC.Models
 
         }
 
-        public Auther GetAuther(int id)
+        public Author GetAuthor(int id)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(AUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("Authers/" + id).Result;
+                HttpResponseMessage response = client.GetAsync("Authors/" + id).Result;
                 if (response.IsSuccessStatusCode)
-                    return response.Content.ReadAsAsync<Auther>().Result;
+                    return response.Content.ReadAsAsync<Author>().Result;
                 return null;
             }
             catch
@@ -175,14 +175,14 @@ namespace LibraryApp.MVC.Models
 
         }
 
-        public bool CreateAuther(Auther auther)
+        public bool CreateAuthor(Author author)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(AUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.PostAsJsonAsync("Authers/", auther).Result;
+                HttpResponseMessage response = client.PostAsJsonAsync("Authors/", author).Result;
 
                 return response.IsSuccessStatusCode;
             }
@@ -193,14 +193,14 @@ namespace LibraryApp.MVC.Models
 
         }
 
-        public bool EditAuther(Auther auther)
+        public bool EditAuthor(Author author)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(AUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.PutAsJsonAsync("Authers/" + auther.Auth_Id, auther).Result;
+                HttpResponseMessage response = client.PutAsJsonAsync("Authors/" + author.Auth_Id, author).Result;
 
                 return response.IsSuccessStatusCode;
             }
@@ -218,7 +218,7 @@ namespace LibraryApp.MVC.Models
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(AUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.DeleteAsync("Authers/" + id).Result;
+                HttpResponseMessage response = client.DeleteAsync("Authors/" + id).Result;
 
                 return response.IsSuccessStatusCode;
             }
@@ -230,14 +230,14 @@ namespace LibraryApp.MVC.Models
         }
 
         //DropDown
-        public IEnumerable<Basic> GetAuthersIdName()
+        public IEnumerable<Basic> GetAuthorsIdName()
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(AUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("Authers/all").Result;
+                HttpResponseMessage response = client.GetAsync("Authors/all").Result;
                 if (response.IsSuccessStatusCode)
                     return response.Content.ReadAsAsync<IEnumerable<Basic>>().Result;
                 return null;
@@ -256,7 +256,7 @@ namespace LibraryApp.MVC.Models
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(AUTHER_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("Authers/EmploymentStatus").Result;
+                HttpResponseMessage response = client.GetAsync("Authors/EmploymentStatus").Result;
                 if (response.IsSuccessStatusCode)
                     return response.Content.ReadAsAsync<IEnumerable<Basic>>().Result;
                 return null;

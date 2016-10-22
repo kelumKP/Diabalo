@@ -8,13 +8,13 @@ using LibraryApp.MVC.Models;
 
 namespace LibraryApp.MVC.Controllers
 {
-    public class BookWithAutherController : Controller
+    public class BookWithAuthorController : Controller
     {
-        // GET: BooksWithAuthers
-        public ActionResult BookswithAuthers()
+        // GET: BooksWithAuthors
+        public ActionResult BookswithAuthors()
         {
             LibraryClient bwu = new LibraryClient();
-            ViewBag.listBookswithAuthers = bwu.GetAllBookWithAuthers();
+            ViewBag.listBookswithAuthors = bwu.GetAllBookWithAuthors();
              return View();
         }
     }

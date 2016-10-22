@@ -16,7 +16,7 @@ namespace LibraryApp.MVC
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "BookWithAuther", action = "BookswithAuthers", id = UrlParameter.Optional }
+                defaults: new { controller = "BookWithAuthor", action = "BookswithAuthors", id = UrlParameter.Optional }
             );
         }
     }

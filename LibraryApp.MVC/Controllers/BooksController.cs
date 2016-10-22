@@ -24,9 +24,9 @@ namespace LibraryApp.MVC.Controllers
             // NonStrongly Type  
             //------------------------------------------
             //Method 1
-            //ViewBag.listAuthers = new SelectList(lc.GetAuthersIdName(), "ID", "NAME");
+            //ViewBag.listAuthors = new SelectList(lc.GetAuthorsIdName(), "ID", "NAME");
             //Method 2
-            ViewBag.listAuthers = lc.GetAuthersIdName().Select(x => new SelectListItem { Value = x.ID.ToString(), Text = x.NAME });
+            ViewBag.listAuthors = lc.GetAuthorsIdName().Select(x => new SelectListItem { Value = x.ID.ToString(), Text = x.NAME });
 
             //------------------------------------------
 
@@ -37,9 +37,9 @@ namespace LibraryApp.MVC.Controllers
             Book model = new Book
             {
                 //Method 1
-                Authers = new SelectList(lc.GetAuthersIdName(), "ID", "NAME");
+                Authors = new SelectList(lc.GetAuthorsIdName(), "ID", "NAME");
                 //Method 2
-                Authers = lc.GetAuthersIdName().Select(x => new SelectListItem { Value = x.ID.ToString(), Text = x.NAME })
+                Authors = lc.GetAuthorsIdName().Select(x => new SelectListItem { Value = x.ID.ToString(), Text = x.NAME })
             }; 
 
             return View(model);
@@ -56,7 +56,7 @@ namespace LibraryApp.MVC.Controllers
         {
             LibraryClient lc = new LibraryClient();
             lc.CreateBook(book);
-            return RedirectToAction("BookswithAuthers", "BookWithAuther");
+            return RedirectToAction("BookswithAuthors", "BookWithAuthor");
         }
 
         // GET: Books/Delete
@@ -64,7 +64,7 @@ namespace LibraryApp.MVC.Controllers
         {
             LibraryClient lc = new LibraryClient();
             lc.DeleteBook(id);
-            return RedirectToAction("BookswithAuthers", "BookWithAuther");
+            return RedirectToAction("BookswithAuthors", "BookWithAuthor");
         }
 
         // GET: Books/Edit
@@ -74,7 +74,7 @@ namespace LibraryApp.MVC.Controllers
             LibraryClient lc = new LibraryClient();
             Book book = new Book();
             book = lc.GetBook(id);
-            ViewBag.listAuthers = lc.GetAuthersIdName().Select(x => new SelectListItem { Value = x.ID.ToString(), Text = x.NAME });
+            ViewBag.listAuthors = lc.GetAuthorsIdName().Select(x => new SelectListItem { Value = x.ID.ToString(), Text = x.NAME });
             ViewBag.listEditions = lc.GetEditionIdNameMVCModel().Select(x => new SelectListItem { Value = x.NAME, Text = x.NAME });
             return View("Edit", book);
         }
@@ -85,7 +85,7 @@ namespace LibraryApp.MVC.Controllers
         {
             LibraryClient pc = new LibraryClient();
             pc.EditBook(book);
-            return RedirectToAction("BookswithAuthers", "BookWithAuther");
+            return RedirectToAction("BookswithAuthors", "BookWithAuthor");
         }
     }
 }

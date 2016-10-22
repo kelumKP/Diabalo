@@ -41,13 +41,13 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Auther_Id, "Auther Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Author_Id, "Author Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @*Non Strongly Type*@
-                @Html.DropDownList("Auther_Id", (IEnumerable<SelectListItem>)ViewBag.listAuthers, "Select the auther name", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("Author_Id", (IEnumerable<SelectListItem>)ViewBag.listAuthors, "Select the author name", htmlAttributes: new { @class = "form-control" })
                 @*Strongly Type*@
-                @*@Html.DropDownListFor(m => m.Auther_Id, Model.Authers, "---Select---", htmlAttributes: new { @class = "form-control" })*@
-                @Html.ValidationMessageFor(model => model.Auther_Id, "", new { @class = "text-danger" })
+                @*@Html.DropDownListFor(m => m.Author_Id, Model.Authors, "---Select---", htmlAttributes: new { @class = "form-control" })*@
+                @Html.ValidationMessageFor(model => model.Author_Id, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -62,6 +62,6 @@
 
 <div>
     <p>
-        <button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("BookswithAuthers", "BookWithAuther")';"><span class="glyphicon glyphicon-list-alt"></span> Book List</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("BookswithAuthors", "BookWithAuthor")';"><span class="glyphicon glyphicon-list-alt"></span> Book List</button>
     </p>
 </div>
