@@ -9,7 +9,6 @@ namespace LibraryApp.Core.Entities
 {
     public class BookWithAuther
     {
-        [Key]
         public int BookWithAuther_Id { get; set; }  
         public string BookWithAuther_Title { get; set; } 
         public string BookWithAuther_AutherName { get; set; }
