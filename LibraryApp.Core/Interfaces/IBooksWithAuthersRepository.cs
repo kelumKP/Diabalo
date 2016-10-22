@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace LibraryApp.Core.Interfaces
 {
-    public interface IBooksWithAuthersRepository
+    public interface IBooksWithAuthorsRepository
     {
-        IEnumerable<BookWithAuther> GetBooksWithAuthers();
-        BookWithAuther FindBooksWithAuthersById(int BookWithAuther_Id);
+        IEnumerable<BookWithAuthor> GetBooksWithAuthors();
+        BookWithAuthor FindBooksWithAuthorsById(int BookWithAuthor_Id);
     }
 }

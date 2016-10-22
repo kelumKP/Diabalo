@@ -9,7 +9,7 @@ namespace LibraryApp.Core.Interfaces
 {
     public interface IBasic
     {
-        IEnumerable<Basic> GetAuthersIdName();
+        IEnumerable<Basic> GetAuthorsIdName();
 
         IEnumerable<Basic> GetEditionIdName();
 

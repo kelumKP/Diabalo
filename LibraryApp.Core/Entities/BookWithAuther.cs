@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace LibraryApp.Core.Entities
 {
-    public class BookWithAuther
+    public class BookWithAuthor
     {
-        public int BookWithAuther_Id { get; set; }  
-        public string BookWithAuther_Title { get; set; } 
-        public string BookWithAuther_AutherName { get; set; }
+        public int BookWithAuthor_Id { get; set; }  
+        public string BookWithAuthor_Title { get; set; } 
+        public string BookWithAuthor_AuthorName { get; set; }
         public decimal Price { get; set; }
         public string Edition { get; set; } 
 

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace LibraryApp.Core.Interfaces
 {
-    public interface IAutherRepository
+    public interface IAuthorRepository
     {
-        void AddAuther(Auther auther);
-        void EditAuther(Auther auther);
-        void RemoveAuther(int Id);
-        IEnumerable<Auther> GetAuthers(); 
-        Auther FindAutherById(int Id);
+        void AddAuthor(Author author);
+        void EditAuthor(Author author);
+        void RemoveAuthor(int Id);
+        IEnumerable<Author> GetAuthors(); 
+        Author FindAuthorById(int Id);
     }
 }

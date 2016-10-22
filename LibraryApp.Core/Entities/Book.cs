@@ -31,15 +31,15 @@ namespace LibraryApp.Core.Entities
         [Display(Name = "Edition")]
         public string Edition { get; set; }
 
-        [Display(Name = "Auther")]
-        [ForeignKey("Auther")] 
-        public int Auther_Id { get; set; }   
-        public Auther Auther { get; set; }
+        [Display(Name = "Author")]
+        [ForeignKey("Author")] 
+        public int Author_Id { get; set; }   
+        public Author Author { get; set; }
 
         // Strongly Type
         //------------------------------------------
         /*
-        public IEnumerable<SelectListItem> Authers { get; set; }
+        public IEnumerable<SelectListItem> Authors { get; set; }
         */
     }
 }

@@ -8,9 +8,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LibraryApp.Core.Entities
 {
-    public class Auther
+    public class Author
     {
-        public Auther()
+        public Author()
         {
 
         }

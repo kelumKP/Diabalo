@@ -78,7 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Auther.cs" />
+    <Compile Include="Entities\Author.cs" />
     <Compile Include="Entities\Basic.cs" />
     <Compile Include="Entities\Book.cs" />
     <Compile Include="Entities\BookWithAuther.cs" />
