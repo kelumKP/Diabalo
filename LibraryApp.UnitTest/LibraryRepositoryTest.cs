@@ -15,6 +15,7 @@ namespace LibraryApp.UnitTest
     {
         LibraryRepository Repo;
 
+        // initialize the test class
         [TestInitialize]
         public void TestSetup()
         {
@@ -23,7 +24,9 @@ namespace LibraryApp.UnitTest
             Repo = new LibraryRepository();
         }
 
-        //------------------Author  
+        #region Author  
+
+        // check valid number of author/s(1) existing in current DB
         [TestMethod]
         public void IsRepositoryInitalizeWithValidNumberOfData_Author()
         {
@@ -33,6 +36,7 @@ namespace LibraryApp.UnitTest
             Assert.AreEqual(3, numberOfRecords);
         }
 
+        // check add author method working and total number of authors(2) correct
         [TestMethod]
         public void IsRepositoryAddsAuthor()
         {
@@ -51,8 +55,11 @@ namespace LibraryApp.UnitTest
             var numberOfRecords = result.ToList().Count;
             Assert.AreEqual(4, numberOfRecords);
         }
+        #endregion
 
-        //------------------Book 
+        #region Book 
+
+        // check valid number of book/s(3) existing in current DB
         [TestMethod]
         public void IsRepositoryInitalizeWithValidNumberOfData_Book()
         {
@@ -62,6 +69,7 @@ namespace LibraryApp.UnitTest
             Assert.AreEqual(3, numberOfRecords);
         }
 
+        // check add book method working and total number of books(4) correct
         [TestMethod]
         public void IsRepositoryAddsBook()
         {
@@ -82,9 +90,11 @@ namespace LibraryApp.UnitTest
             var numberOfRecords = result.ToList().Count;
             Assert.AreEqual(4, numberOfRecords);
         }
+        #endregion
 
-        //------------------Books with Author 
+        #region Books with Author 
 
+        // check valid number of book and author/s(4) existing in current DB
         [TestMethod]
         public void IsRepositoryInitalizeWithValidNumberOfData_BooksWithAuthor()
         {
@@ -94,7 +104,11 @@ namespace LibraryApp.UnitTest
             Assert.AreEqual(4, numberOfRecords);
         }
 
-        //------------------DropDown
+        #endregion     
+
+        #region DropDowns
+
+        // check valid number of author/s(4) listing in dropdown
         [TestMethod]
         public void IsRepositoryInitalizeWithValidNumberOfData_AuthorDropDown()
         {
@@ -103,8 +117,6 @@ namespace LibraryApp.UnitTest
             var numberOfRecords = result.ToList().Count;
             Assert.AreEqual(4, numberOfRecords);
         }
-
-
-
+        #endregion
     }
 }
