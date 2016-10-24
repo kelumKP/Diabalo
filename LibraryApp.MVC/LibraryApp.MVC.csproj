@@ -211,22 +211,22 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Controllers\Content\bootstrap-theme.css" />
+    <Content Include="Controllers\Content\bootstrap-theme.min.css" />
+    <Content Include="Controllers\Content\bootstrap.css" />
+    <Content Include="Controllers\Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Controllers\Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Controllers\Content\bootstrap.min.css.map" />
+    <Content Include="Controllers\Content\bootstrap.css.map" />
+    <Content Include="Controllers\Content\bootstrap-theme.min.css.map" />
+    <Content Include="Controllers\Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -275,7 +275,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\BookWithAuther\BookswithAuthers.cshtml" />
+    <Content Include="Views\BookWithAuthor\BookswithAuthors.cshtml" />
     <Content Include="Views\Books\Create.cshtml" />
     <Content Include="Views\Books\Delete.cshtml" />
     <Content Include="Views\Books\Details.cshtml" />
@@ -300,10 +300,6 @@
     <ProjectReference Include="..\LibraryApp.Core\LibraryApp.Core.csproj">
       <Project>{b794c2f3-e241-4db2-b20a-d104032fbf03}</Project>
       <Name>LibraryApp.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LibraryApp.Infrastructure\LibraryApp.Infrastructure.csproj">
-      <Project>{9f75782a-d109-4a51-9c5e-992117955590}</Project>
-      <Name>LibraryApp.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\LibraryApp.WebAPI\LibraryApp.WebAPI.csproj">
       <Project>{c4247f4d-cbb2-4e8f-91cf-d14b3be37103}</Project>
