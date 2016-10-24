@@ -4,14 +4,15 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Net;
+
 using System.Net.Http;
-using System.Web.Http;
+
 using System.Web.Http.Description;
 using LibraryApp.Core.Entities;
 using LibraryApp.Infrastructure;
+using System.Web.Http;
+using System.Net;
 
- 
 namespace LibraryApp.WebAPI.Controllers
 {
     public class BooksController : ApiController
@@ -19,6 +20,7 @@ namespace LibraryApp.WebAPI.Controllers
         private LibraryRepository db = new LibraryRepository();
 
         //// GET: api/Books
+        // Get all the books 
         public IEnumerable<Book> GetBooks()
         {
             return db.GetBooks();
