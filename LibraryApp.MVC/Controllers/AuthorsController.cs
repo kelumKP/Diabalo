@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using LibraryApp.Core.Entities;
-using LibraryApp.Infrastructure;
 using LibraryApp.MVC.Models;
 
 namespace LibraryApp.MVC.Controllers
